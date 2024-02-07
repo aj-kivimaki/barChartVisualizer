@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visualize Data with a Bar Chart</title>
+    <title>Bar Chart</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
     <!-- CDN for D3.js library (before main script.js)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.js"></script>
     <!-- CDN for D3 tooltip (after main d3.js)-->
@@ -16,7 +15,9 @@
     <main class="app">
       <div class="container">
         <h1 id="title">United States GDP</h1>
-        <div class="canvas"></div>
+        <div class="canvas">
+          <div class="y-name">Gross Domestic Product</div>
+        </div>
         <div class="link">
           <pre><a href="http://www.bea.gov/national/pdf/nipaguid.pdf">http://www.bea.gov/national/pdf/nipaguid.pdf</a></pre>
         </div>

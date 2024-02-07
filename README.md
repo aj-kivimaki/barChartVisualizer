@@ -4,9 +4,9 @@
 
 https://bar-chart.freecodecamp.rocks.
 
-### Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
+Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-### You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at https://d3js.org/d3-axis. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at https://d3js.org/d3-axis. Required DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
 
 - User Story #1: My chart should have a title with a corresponding id="title". ✅
 
@@ -32,7 +32,7 @@ https://bar-chart.freecodecamp.rocks.
 
 - User Story #12: I can mouse over an area and see a tooltip with a corresponding id="tooltip" which displays more information about the area. ✅
 
-- User Story #13: My tooltip should have a data-date property that corresponds to the data-date of the active area.
+- User Story #13: My tooltip should have a data-date property that corresponds to the data-date of the active area. ✅
 
 Here is the dataset you will need to complete this project:
 

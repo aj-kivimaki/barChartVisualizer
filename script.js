@@ -54,10 +54,10 @@ getData().then((data) => {
     .tip()
     .attr("id", "tooltip")
     .html((d) => {
-      return `${new Date(d[0]).getFullYear()} Q${Math.ceil(
+      return `<i>${new Date(d[0]).getFullYear()} Q${Math.ceil(
         (new Date(d[0]).getMonth() + 1) / 3
-      )} | 
-      ${d[1].toLocaleString("en-US")} billion`;
+      )} <br> 
+      ${d[1].toLocaleString("en-US")} Billion</i>`;
     });
 
   graph.call(tip);
@@ -91,7 +91,7 @@ getData().then((data) => {
 
   const yAxis = d3
     .axisLeft(y)
-    .ticks(10)
+    .ticks(8)
     .tickFormat((d) => `${d.toLocaleString("en-US")}`);
 
   xAxisGroup

@@ -30,6 +30,13 @@ h2 {
   color: white;
 }
 
+.y-name {
+  position: absolute;
+  left: 25px;
+  top: 130px;
+  transform: rotate(-90deg);
+}
+
 .app {
   padding: 20px;
 }
@@ -50,6 +57,7 @@ h2 {
 .canvas {
   width: 800px;
   height: 400px;
+  position: relative;
 }
 
 .bar:hover {
@@ -76,4 +84,7 @@ pre {
   background-color: #333;
   border-radius: 5px;
   box-shadow: 0 0 7px white;
+  font-size: 16px;
+  transform: translate(100px, 70%);
+  text-align: center;
 }
