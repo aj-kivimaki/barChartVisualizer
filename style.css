@@ -44,16 +44,12 @@ h2 {
   height: 600px;
   border-radius: 3px;
   box-shadow: 0 0 3px white;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .canvas {
   width: 800px;
   height: 400px;
-}
-
-.bar {
-  opacity: 1;
 }
 
 .bar:hover {
@@ -70,9 +66,14 @@ pre {
   font-size: 10px;
 }
 
-.tooltip {
-  background-color: #999;
-  height: 60px;
-  width: 100px;
-  color: black;
+#x-axis {
+  fill: rgb(206, 206, 206);
+}
+
+#tooltip {
+  color: white;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 7px white;
 }

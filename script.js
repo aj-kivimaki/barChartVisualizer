@@ -32,8 +32,10 @@ const graph = svg
 // create the axis
 const xAxisGroup = graph
   .append("g")
+  .attr("id", "x-axis")
   .attr("transform", `translate(0, ${graphHeight})`);
-const yAxisGroup = graph.append("g");
+
+const yAxisGroup = graph.append("g").attr("id", "y-axis");
 
 // create the chart
 getData().then((data) => {
@@ -45,8 +47,20 @@ getData().then((data) => {
     .scaleBand()
     .domain(data.map((d) => d[0]))
     .range([0, width]) // width of the svg
-    .paddingInner(0.05)
-    .paddingOuter(0.05);
+    .paddingInner(0.15);
+
+  // create the tip
+  const tip = d3
+    .tip()
+    .attr("id", "tooltip")
+    .html((d) => {
+      return `${new Date(d[0]).getFullYear()} Q${Math.ceil(
+        (new Date(d[0]).getMonth() + 1) / 3
+      )} | 
+      ${d[1].toLocaleString("en-US")} billion`;
+    });
+
+  graph.call(tip);
 
   graph
     .selectAll("rect")
@@ -55,27 +69,29 @@ getData().then((data) => {
     .append("rect")
     .attr("width", x.bandwidth)
     .attr("height", (d) => graphHeight - y(d[1]))
-    .attr("fill", "orange")
+    .attr("fill", "#EC9706")
     .attr("x", (d) => x(d[0]))
     .attr("y", (d) => y(d[1]))
     .attr("class", "bar")
-    .append("title")
-    .text(
-      (d) =>
-        `${new Date(d[0]).getFullYear()} Q${Math.ceil(
-          (new Date(d[0]).getMonth() + 1) / 3
-        )}\n${d[1].toLocaleString("en-US")} billion`
-    );
+    .attr("data-gdp", (d) => d[1])
+    .attr("data-date", (d) => {
+      return dateFns.format(new Date(d[0]), "YYYY-MM-DD");
+    })
+    .on("mouseover", (d, i, n) => {
+      tip.show(d, n[i]);
+      tip.attr("data-date", dateFns.format(new Date(d[0]), "YYYY-MM-DD"));
+    })
+    .on("mouseout", (d, i, n) => tip.hide());
 
   // create and call the axes
   const xAxis = d3
     .axisBottom(x)
-    .tickValues(x.domain().filter((d, i) => i % 15 === 0)) // Display every 5 years
-    .tickFormat((d) => new Date(d[0]).getFullYear());
+    .tickValues(x.domain().filter((d, i) => i % 20 === 0)) // Display every 5 years
+    .tickFormat((d) => new Date(d).getFullYear());
 
   const yAxis = d3
     .axisLeft(y)
-    .ticks(6)
+    .ticks(10)
     .tickFormat((d) => `${d.toLocaleString("en-US")}`);
 
   xAxisGroup

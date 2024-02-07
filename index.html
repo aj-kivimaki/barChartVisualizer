@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visualize Data with a Bar Chart</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- CDN for testing purposes -->
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <!-- CDN for D3.js library -->
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- CDN for D3.js library (before main script.js)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.js"></script>
+    <!-- CDN for D3 tooltip (after main d3.js)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -17,9 +18,11 @@
         <h1 id="title">United States GDP</h1>
         <div class="canvas"></div>
         <div class="link">
-          <pre><a href="http://www.bea.gov/national/pdf/nipaguid.pdf">www.bea.gov/national/pdf/nipaguid.pdf</a></pre>
+          <pre><a href="http://www.bea.gov/national/pdf/nipaguid.pdf">http://www.bea.gov/national/pdf/nipaguid.pdf</a></pre>
         </div>
       </div>
     </main>
+    <!-- CDN for testing purposes -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
