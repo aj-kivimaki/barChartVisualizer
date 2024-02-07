@@ -75,11 +75,11 @@ getData().then((data) => {
     .attr("class", "bar")
     .attr("data-gdp", (d) => d[1])
     .attr("data-date", (d) => {
-      return dateFns.format(new Date(d[0]), "YYYY-MM-DD");
+      return formatDate(new Date(d[0]), "YYYY-MM-DD");
     })
     .on("mouseover", (d, i, n) => {
       tip.show(d, n[i]);
-      tip.attr("data-date", dateFns.format(new Date(d[0]), "YYYY-MM-DD"));
+      tip.attr("data-date", formatDate(new Date(d[0]), "YYYY-MM-DD"));
     })
     .on("mouseout", (d, i, n) => tip.hide());
 
@@ -102,3 +102,14 @@ getData().then((data) => {
   xAxisGroup.call(xAxis);
   yAxisGroup.call(yAxis);
 });
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const quarter = Math.floor(date.getMonth() / 3) + 1;
+  const quarterStartMonth = (quarter - 1) * 3;
+  const formattedDate = `${year}-${String(quarterStartMonth + 1).padStart(
+    2,
+    "0"
+  )}-01`;
+  return formattedDate;
+}
