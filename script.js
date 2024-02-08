@@ -19,8 +19,8 @@ const graphHeight = height - margin.top - margin.bottom;
 const svg = d3
   .select(".canvas")
   .append("svg")
-  .attr("width", 1000)
-  .attr("height", 500);
+  .attr("width", width)
+  .attr("height", height);
 
 // create graph
 const graph = svg

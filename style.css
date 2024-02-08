@@ -32,18 +32,19 @@ h2 {
 
 .y-name {
   position: absolute;
-  left: 25px;
+  left: 30px;
   top: 130px;
   transform: rotate(-90deg);
 }
 
 .app {
   padding: 20px;
+  height: 100vh;
 }
 
 .container {
   position: relative;
-  margin: 5% auto;
+  margin: 100px auto;
   text-align: center;
   padding: 60px 0;
   background-color: #91ae92;
@@ -55,8 +56,6 @@ h2 {
 }
 
 .canvas {
-  width: 800px;
-  height: 400px;
   position: relative;
 }
 
