@@ -1,5 +1,7 @@
 # Visualize Data with a Bar Chart
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=aj-kivimaki_barChartVisualizer&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=aj-kivimaki_barChartVisualizer)
+
 ## Objective: Build an app that is functionally similar to this:
 
 https://bar-chart.freecodecamp.rocks.

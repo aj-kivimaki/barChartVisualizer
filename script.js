@@ -75,11 +75,11 @@ getData().then((data) => {
     .attr("class", "bar")
     .attr("data-gdp", (d) => d[1])
     .attr("data-date", (d) => {
-      return formatDate(new Date(d[0]), "YYYY-MM-DD");
+      return formatDate(new Date(d[0]));
     })
     .on("mouseover", (d, i, n) => {
       tip.show(d, n[i]);
-      tip.attr("data-date", formatDate(new Date(d[0]), "YYYY-MM-DD"));
+      tip.attr("data-date", formatDate(new Date(d[0])));
     })
     .on("mouseout", (d, i, n) => tip.hide());
 
